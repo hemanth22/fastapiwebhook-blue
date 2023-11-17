@@ -1,0 +1,45 @@
+﻿kind: Service
+apiVersion: v1
+metadata:
+  name: fastapiwebhook-blue
+  namespace: bitroid-dev
+  uid: 77073549-e3e0-4fa6-9da3-8c7300432359
+  resourceVersion: '1525800704'
+  creationTimestamp: '2023-11-17T10:38:57Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2023-11-17T10:38:57Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:internalTrafficPolicy': {}
+          'f:ports':
+            .: {}
+            'k:{"port":8000,"protocol":"TCP"}':
+              .: {}
+              'f:port': {}
+              'f:protocol': {}
+              'f:targetPort': {}
+          'f:selector': {}
+          'f:sessionAffinity': {}
+          'f:type': {}
+spec:
+  clusterIP: 172.30.84.7
+  ipFamilies:
+    - IPv4
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+    - 172.30.84.7
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: fastapiwebhook-blue
+status:
+  loadBalancer: {}
